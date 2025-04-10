@@ -1,0 +1,97 @@
+.profileUpdatePage {
+  height: 100%;
+  display: flex;
+
+  .formContainer {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        label {
+        }
+
+        input {
+          padding: 20px;
+          border-radius: 5px;
+          border: 1px solid gray;
+        }
+      }
+      button {
+        display: inline-block;
+        width: 100%;
+        padding: 16px;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        color: #fff;
+        background-color: teal; // 🌿 Primary color
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        outline: none;
+
+        &:hover {
+          background-color: #006666; // Darker teal on hover
+        }
+
+        &:active {
+          transform: scale(0.98); // Slight press effect
+        }
+
+        &:disabled {
+          background-color: #cccccc;
+          cursor: not-allowed;
+        }
+      }
+
+      .error,
+      .success {
+        display: block;
+        margin-top: 10px;
+        padding: 8px 12px;
+        border-radius: 5px;
+        font-size: 14px;
+        text-align: center;
+        width: 100%;
+      }
+
+      .error {
+        background-color: rgba(255, 0, 0, 0.1); // Light red background
+        color: #d32f2f; // Dark red text
+        border: 1px solid #d32f2f;
+      }
+
+      .success {
+        background-color: rgba(0, 128, 0, 0.1); // Light green background
+        color: #2e7d32; // Dark green text
+        border: 1px solid #2e7d32;
+      }
+    }
+  }
+
+  .sideContainer {
+    flex: 2;
+    background-color: #fcf5f3;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+
+    .avatar {
+      width: 50%;
+      object-fit: cover;
+    }
+  }
+}

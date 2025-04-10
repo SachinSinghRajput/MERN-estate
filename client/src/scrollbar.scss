@@ -1,0 +1,19 @@
+/* _scrollbar.scss */
+@mixin custom-scrollbar {
+  -ms-overflow-style: none; /* IE/Edge */
+
+  &::-webkit-scrollbar {
+    width: 8px; /* Keeps it slim */
+    background: transparent; /* Initially hidden */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3); /* Subtle color */
+    border-radius: 3px;
+    visibility: hidden; /* Initially hidden */
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    visibility: visible; /* Appears when hovered */
+  }
+}

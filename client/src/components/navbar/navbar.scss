@@ -1,0 +1,178 @@
+@use "../../responsive.scss" as *;
+nav {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  a {
+    transition: all 0.2s ease;
+
+    @include sm {
+      display: none;
+    }
+    &:hover {
+      scale: 1.05;
+    }
+  }
+
+  .left {
+    flex: 3;
+
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    .logo {
+      font-weight: bold;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      img {
+        width: 28px;
+      }
+      span {
+        @include md {
+          display: none;
+        }
+        @include sm {
+          display: initial;
+        }
+      }
+    }
+  }
+
+  .right {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    background-color: #2e394422;
+
+    @include md {
+      background-color: transparent;
+    }
+
+    a {
+      padding: 12px 24px;
+      margin: 28px;
+    }
+
+    .user {
+      display: flex;
+      font-weight: bold;
+      align-items: center;
+
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 20px;
+      }
+
+      span {
+        @include sm {
+          display: none;
+        }
+      }
+
+      .profile {
+        padding: 12px 24px;
+        background-color: #fece51;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        position: relative;
+
+        .notification {
+          width: 26px;
+          height: 26px;
+          position: absolute;
+          background-color: red;
+          color: white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          top: -8px;
+          right: -8px;
+        }
+      }
+    }
+    .signin {
+      background-color: #d97777; /* Soft Warm Red */
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    }
+
+    .signin:hover {
+      background-color: #c36868;
+      transform: scale(1.05);
+    }
+
+    .register {
+      background-color: #e6c57c; /* Muted Golden Beige */
+      color: #2e3944; /* Dark Text for Contrast */
+      padding: 10px 20px;
+      height: 41px;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    }
+
+    .register:hover {
+      background-color: #cfb06c;
+      transform: scale(1.05);
+    }
+
+    .menuIcon {
+      display: none;
+      z-index: 999;
+      img {
+        width: 36px;
+        height: 36px;
+        cursor: pointer;
+      }
+
+      @include sm {
+        display: inline;
+      }
+    }
+
+    .menu {
+      position: absolute;
+      top: 0;
+      right: -50%;
+      background-color: black;
+      color: white;
+      height: 100vh;
+      width: 50%;
+      transition: 0.6s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      &.active {
+        right: 0;
+      }
+
+      @include sm {
+        a {
+          display: initial;
+        }
+      }
+    }
+  }
+}

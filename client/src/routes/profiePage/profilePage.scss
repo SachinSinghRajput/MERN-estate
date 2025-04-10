@@ -1,0 +1,119 @@
+@use "../../responsive.scss" as *;
+@use "../../scrollbar.scss" as *;
+.profilePage {
+  display: flex;
+  height: 100%;
+
+  @include md {
+    flex-direction: column;
+    overflow-y: scroll;
+    @include custom-scrollbar;
+  }
+
+  .details {
+    flex: 3;
+    overflow-y: scroll;
+    padding-bottom: 50px;
+    @include custom-scrollbar;
+
+    @include md {
+      flex: none;
+      height: max-content;
+    }
+
+    .wrapper {
+      padding-right: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+
+      .title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h1 {
+          font-weight: 400;
+        }
+
+        button {
+          padding: 16px;
+          background-color: #fece51;
+          cursor: pointer;
+          border: none;
+          border-radius: 8px; /* Smooth rounded corners */
+          font-size: 15px; /* More readable text */
+          font-weight: bold;
+          color: #030000; /* Darker text for contrast */
+          transition: all 0.3s ease-in-out; /* Smooth hover effect */
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        button:hover {
+          background-color: #ffb900; /* Slightly darker yellow on hover */
+          transform: scale(1.05); /* Subtle zoom effect */
+        }
+
+        button:active {
+          background-color: #e0a800; /* Even darker shade when clicked */
+          transform: scale(0.98); /* Slight shrink effect */
+        }
+      }
+      .info {
+        display: flex;
+        flex-direction: column;
+
+        gap: 20px;
+
+        span {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+        }
+
+        .logout {
+          background-color: #255a52; /* Soft Warm Red */
+          color: white;
+          width: 100px;
+          padding: 10px 20px;
+          border-radius: 5px;
+          border: none;
+          font-size: 16px;
+          font-weight: 500;
+          margin-left: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease-in-out,
+            transform 0.2s ease-in-out;
+        }
+
+        .logout:hover {
+          background-color: #1d4640;
+          transform: scale(1.05);
+        }
+
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  .chatContainer {
+    flex: 2;
+    background-color: #95a0aab0;
+    height: 100%;
+    border-radius: 10px;
+    @include md {
+      flex: none;
+      height: max-content;
+    }
+
+    .wrapper {
+      padding: 0px 20px;
+      height: 100%;
+    }
+  }
+}
